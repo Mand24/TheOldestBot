@@ -22,7 +22,7 @@ fs.readdir("./cmds/", (err, files) => {
 
 		let props = require(`./cmds/${f}`)
 		console.log(`${i + 1}: ${f} loaded!`);
-		bot.commands.set(f, props);
+		bot.commands.set(props.help.name, props);
 
 	});
 });
