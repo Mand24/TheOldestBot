@@ -1,6 +1,7 @@
 const botSettings = require("./botSettings.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+
 const prefix = botSettings.prefix;
 
 const bot = new Discord.Client({disableEveryone: true});
@@ -50,7 +51,7 @@ bot.on("message", async message => {
 	let cmd = bot.commands.get(command.slice(prefix.length));
 	if(cmd) cmd.run(bot, message, args);
 
-	switch (command) 
+/*	switch (command) 
 	{
 
 		case `${prefix}userinfo` :
@@ -154,10 +155,14 @@ bot.on("message", async message => {
 
 		break;
 
+		/*case `${prefix}saludo` :
+		
+		return message.channel.send("Hola");
+		
+		break;
 
 
-
-	}
+	}*/
 
 });
 
